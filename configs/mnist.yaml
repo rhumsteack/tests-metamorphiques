@@ -1,0 +1,14 @@
+seed: 42
+subset_size: 1024
+eval_size: 128
+batch_size: 64
+learning_rate: 0.001
+train_epochs: 1
+artifact_path: artifacts/mnist_cnn.pt
+thresholds:
+  identity_max_logit_diff: 1.0e-6
+  double_flip_max_logit_diff: 1.0e-4
+  rotate_inverse_max_logit_diff: 0.25
+  brightness_top1_match_rate: 0.85
+  blur_top1_match_rate: 0.80
+  batch_consistency_max_logit_diff: 1.0e-6

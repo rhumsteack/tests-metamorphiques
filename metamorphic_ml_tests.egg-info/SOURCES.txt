@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+metamorphic_ml_tests.egg-info/PKG-INFO
+metamorphic_ml_tests.egg-info/SOURCES.txt
+metamorphic_ml_tests.egg-info/dependency_links.txt
+metamorphic_ml_tests.egg-info/requires.txt
+metamorphic_ml_tests.egg-info/top_level.txt
+models/__init__.py
+models/mnist_simple.py
+src/__init__.py
+src/dataset.py
+src/inference.py
+src/transforms.py

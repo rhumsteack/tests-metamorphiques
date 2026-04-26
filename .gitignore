@@ -1,0 +1,14 @@
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+*.pyo
+*.pyd
+
+# local datasets and artifacts
+data/
+artifacts/
+
+# coverage
+.coverage
+htmlcov/

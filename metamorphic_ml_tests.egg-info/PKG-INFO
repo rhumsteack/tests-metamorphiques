@@ -1,0 +1,58 @@
+Metadata-Version: 2.4
+Name: metamorphic-ml-tests
+Version: 0.1.0
+Summary: Pilot project to practice metamorphic testing on MNIST
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: numpy<3,>=1.24
+Requires-Dist: Pillow<12,>=10
+Requires-Dist: PyYAML<7,>=6
+Requires-Dist: torch<3,>=2.2
+Requires-Dist: torchvision<1,>=0.17
+Provides-Extra: dev
+Requires-Dist: pytest<9,>=8; extra == "dev"
+Requires-Dist: pytest-cov<6,>=5; extra == "dev"
+
+# Metamorphic Testing Pilot (MNIST)
+
+Projet pilote pour apprendre le **test metamorphique** sur un modele de classification d'images (MNIST), avec une approche pedagogique adaptee aux debutants.
+
+## Ce qu'on veut tester
+
+En ML, il est souvent difficile d'avoir un oracle parfait pour chaque entree. Le test metamorphique contourne ce probleme en testant des **relations** entre entrees liees:
+
+- Image source `x`
+- Image transformee `T(x)`
+- Relation attendue entre les sorties `f(x)` et `f(T(x))`
+
+Exemple simple: si on applique une transformation quasi-identite (double flip horizontal), la prediction doit rester identique.
+
+## Demarrage rapide
+
+1. Creer un environnement Python 3.10+
+2. Installer les dependances
+
+```bash
+pip install -e .[dev]
+```
+
+3. Executer les tests unitaires
+
+```bash
+pytest tests/unit -m unit
+```
+
+4. Executer les tests metamorphiques
+
+```bash
+pytest tests/metamorphic -m metamorphic
+```
+
+## Structure
+
+- `docs/INTRO_NOVICES.md`: presentation claire pour novices
+- `docs/DEMO_SCRIPT.md`: script de demo en 10 minutes
+- `configs/mnist.yaml`: seed, taille des subsets, seuils des MRs
+- `src/`: dataset, transforms, inference
+- `models/`: petit CNN MNIST
+- `tests/metamorphic/`: MRs automatisees avec PyTest
